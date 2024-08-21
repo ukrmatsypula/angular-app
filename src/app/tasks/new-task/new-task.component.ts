@@ -21,6 +21,11 @@ export class NewTaskComponent {
   }
 
   onSubmit() {
+    if (!this.enteredTitle) {
+      alert("The 'Title' field cannot be empty. Please enter a title.");
+      return;
+    }
+
     this.tasksService.addTask(
       {
         title: this.enteredTitle,
